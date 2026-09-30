@@ -1,0 +1,11 @@
+query,avg_ms,access_type,index_used,rows_scanned,note
+product_by_category,0.253,ref,idx_product_category,1,
+product_by_price_exact,10.212,ALL,(none),39785,Using where
+product_by_price_range_narrow,12.769,ALL,(none),39785,Using where
+product_by_name,1.018,range,idx_product_name,429,Using index condition
+orders_by_customer,0.205,ref,idx_orders_customer,12,
+orders_by_date_exact,0.548,ALL,(none),3006,Using where
+reviews_by_product,0.164,ref,idx_rev_product,1,
+interactions_by_user,0.178,ref,idx_int_cust_type,5,
+interactions_by_user_type,0.163,ref,idx_int_cust_type,1,Using index condition
+fulltext_search,3.529,fulltext,idx_ft_product,1,Using where; Ft_hints: sorted

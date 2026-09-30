@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart E-Commerce Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>🛒 Smart E-Commerce Dashboard</h1>
+      <p>MySQL + FastAPI + ML Recommendations</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- KPI Cards -->
+    <section class="kpis">
+      <div class="kpi">
+        <div class="kpi-label">Total Customers</div>
+        <div class="kpi-value" id="kpi-customers">–</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Products</div>
+        <div class="kpi-value" id="kpi-products">–</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Orders</div>
+        <div class="kpi-value" id="kpi-orders">–</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Interactions</div>
+        <div class="kpi-value" id="kpi-interactions">–</div>
+      </div>
+    </section>
+
+    <!-- Charts Row -->
+    <section class="grid-2">
+      <div class="card">
+        <h2>📊 Revenue by Category</h2>
+        <canvas id="categoryChart" height="260"></canvas>
+      </div>
+      <div class="card">
+        <h2>⭐ Top-Rated Products</h2>
+        <ol id="topRatedList" class="ranked-list">
+          <li class="muted">Loading...</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Products Table -->
+    <section class="card">
+      <h2>📦 Products</h2>
+      <div class="table-wrap">
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4" class="muted">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="card">
+      <h2>🤖 Personalised Recommendations</h2>
+      <div class="rec-controls">
+        <label for="userId">Customer ID:</label>
+        <input type="number" id="userId" value="12347" />
+        <button id="recBtn">Get Recommendations</button>
+      </div>
+      <div id="recResults" class="rec-results">
+        <div class="muted">Enter a customer ID and click the button</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📋 Recent Orders</h2>
+      <table id="recentOrders">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="5" class="muted">Loading...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Place Order -->
+    <section class="card">
+      <h2>🛍️ Place a Test Order</h2>
+      <div class="order-controls">
+        <label>Customer ID: <input type="number" id="orderCustomer" value="12347" /></label>
+        <label>Product ID: <input type="number" id="orderProduct" value="7331" /></label>
+        <label>Quantity: <input type="number" id="orderQty" value="2" /></label>
+        <button id="orderBtn">Place Order</button>
+      </div>
+      <pre id="orderResult" class="result-box"></pre>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built with ❤️ using MySQL, FastAPI, Pandas, Scikit-learn, Chart.js</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
