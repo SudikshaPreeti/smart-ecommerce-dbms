@@ -2,8 +2,6 @@
 
 A full-stack e-commerce system built with **MySQL**, **Python (FastAPI)**, and **machine learning** for personalised product recommendations.
 
-![Dashboard Screenshot](docs/dashboard.png)
-
 ## 🏗️ Architecture
 Browser (HTML/CSS/JS + Chart.js) ──► FastAPI (Python) ──► MySQL 8.0
 │
